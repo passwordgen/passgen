@@ -1,17 +1,26 @@
 document.getElementById("button").addEventListener("click", generate);
-document.getElementById("body").style.width = "500px";
-document.getElementById("body").style.height = "200px";
+
+const checkbox = document.getElementById("Symbols");
+let symbol = "";
+
+checkbox.addEventListener("change", () => {
+  symbol = checkbox.checked ? "y" : "";
+});
+
 function generate(){
   function combineCharacters(strings, length=16) {
     let combinedString = "";
     let characters = [];
-    if (lengths) {
-      length = parseInt(lengths);
+    var input = document.getElementById("length").value;
+    if (isNaN(parseInt(input)) || parseInt(input) <= 0) {
+      ;
+    } else {
+      length = parseInt(input);
     }
     let includedStrings = [];
     for (let string of strings) {
       if (string === "!@#$%&?") {
-        if (include.toLowerCase() === "y" || include === "") {
+        if (symbol == "y") {
           for (let character of string) {
             characters.push(character);
           }
@@ -44,15 +53,6 @@ function generate(){
   }
   
   strings = ["!@#$%&?", "qwertyuiopasdfghjklzxcvbnm", "QWERTYUIOPASDFGHJKLZXCVBNM", "1234567890"];
-  console.log("Welcome to your (extremely basic) password generator!");
-  lengths = prompt("Enter the length of the password (press enter for 16): ");
-  //amount = prompt("Enter the amount of passwords (press enter for 1):");
-  include = prompt("Include symbols? (y/n) (press enter for yes):");
-  /*if (amount) {
-    amount = parseInt(amount);
-  } else {
-    amount = 1;
-  }*/
   amount = 1;
   for (let i = 0; i < amount; i++) {
     combinedString = combineCharacters(strings);
@@ -64,6 +64,6 @@ function generate(){
     navigator.clipboard.writeText(combinedString);
   }
   document.getElementById('Copied').innerHTML = "Copied Password to Clipboard";
-  console.log("Copied last password to clipboard");
+  console.log("Copied password to clipboard");
   document.getElementById('button').innerHTML = "Generate a new password";
 }
