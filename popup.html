@@ -3,12 +3,12 @@
     <title>Password Generator</title>
     <link href="popup.css" rel="stylesheet" media="screen"/>
 </head>
-  <body id="body">
-    <div class="welcome">Welcome to your passgen!</div>
+  <body id="body" class="body">
+    <h1 class="welcome">Welcome to your passgen!</h1>
     <form action="" method="get" class="password">
         <div class="form">
             <label for="length" class="length">Length (default 16): </label>
-            <input type="text" name="length" id="length" class="length">
+            <input type="number" name="length" id="length" class="length" placeholder="e.g. 16">
         </div>
         <div class="form">
             <label for="Symbols" class="symbols">Symbols: </label>
@@ -20,6 +20,7 @@
     </form>
     <div id="output"></div>
     <div id="Copied"></div>
+    <a href="https://www.flaticon.com/free-icons/security" title="security icons">Extenstion icons created by Freepik - Flaticon</a>
     <script src="popup.js"></script>
 </body></html>
 

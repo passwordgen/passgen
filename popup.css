@@ -15,12 +15,11 @@ label.symbols {
 input.length {
 	width: 50px;
 }
-body {
-  font: "Comic Sans", "Times New Roman", sans-serif;
-  width: 250px;
-  height: 130px;
-}
 .welcome {
 	padding-bottom: 5px;
-    font: 20px "Comic Sans", "Times New Roman", sans-serif;
+    font: 22px "Comic Sans", "Times New Roman", sans-serif;
+}
+.body {
+    width: 250px;
+	height: 140px;
 }
